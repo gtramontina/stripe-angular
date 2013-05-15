@@ -8,7 +8,7 @@ This is the only directive available at the moment:
 #### `stripe:form`
 It abstracts what you would be doing manually as described in [https://stripe.com/docs/tutorials/forms](https://stripe.com/docs/tutorials/forms).
 
-```
+```html
 <form stripe:form="saveCustomer">
   <fieldset>
     <input type="text" size="20" data-stripe="number"/>
@@ -21,12 +21,12 @@ It abstracts what you would be doing manually as described in [https://stripe.co
 ```
 The `saveCustomer` function is what in the documents is called `stripeResponseHandler`. You can now do whatever you want with the response, like saving the new Stripe Customer ID to your user using a service, for example.
 
-```
+```js
 angular.module('myApp', ['stripe'])
 .controller('IndexController', function($scope, $rootScope) {
   $scope.saveCustomer = function(status, response) {
-  $rootScope.user.stripeCustomerId = response.id;
-  $rootScope.user.save();
+    $rootScope.user.stripeCustomerId = response.id;
+    $rootScope.user.save();
   };
 });
 ```
