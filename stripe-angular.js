@@ -7,7 +7,7 @@ function($window) {
     form.bind('submit', function() {
       var button = form.find('button');
       button.prop('disabled', true);
-      $window.Stripe.createToken(form, function() {
+      $window.Stripe.createToken(form[0], function() {
         var args = arguments;
         scope.$apply(function() {
           scope[attributes.stripeForm].apply(scope, args);
