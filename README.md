@@ -1,11 +1,15 @@
-Stripe Angular
-==============
+# Stripe Angular [![Bower version](https://badge.fury.io/bo/stripe-angular.svg)](http://badge.fury.io/bo/stripe-angular)
 Angular directives to deal with [Stripe](https://stripe.com/).
 
-## Directives
-This is the only directive available at the moment:
+## Install
+```
+bower install stripe-angular
+```
 
-#### `stripe:form`
+## Directives
+List of available directives (only one at the moment :grin: ):
+
+### `stripe:form`
 It abstracts what you would be doing manually as described in [https://stripe.com/docs/tutorials/forms](https://stripe.com/docs/tutorials/forms).
 
 ```html
@@ -16,7 +20,7 @@ It abstracts what you would be doing manually as described in [https://stripe.co
     <input type="text" size="2" data-stripe="exp-month"/>
     <input type="text" size="4" data-stripe="exp-year"/>
   </fieldset>
-  <button type="submit" class="btnGreen">Save</button>
+  <button type="submit">Save</button>
 </form>
 ```
 The `saveCustomer` function is what in the documents is called `stripeResponseHandler`. You can now do whatever you want with the response, like saving the new Stripe Customer ID to your user using a service, for example.
@@ -33,7 +37,3 @@ angular.module('myApp', ['stripe'])
 
 ## License
 This is licensed under the feel-free-to-do-whatever-you-want-to-do license.
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/gtramontina/stripe-angular/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
