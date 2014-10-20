@@ -8,11 +8,11 @@ function($window) {
       var button = form.find('button');
       button.prop('disabled', true);
       $window.Stripe.createToken(form[0], function() {
+        button.prop('disabled', false);
         var args = arguments;
         scope.$apply(function() {
           scope[attributes.stripeForm].apply(scope, args);
         });
-        button.prop('disabled', false);
       });
     });
   };
