@@ -1,7 +1,7 @@
 {
   "name": "stripe-angular",
   "main": "stripe-angular.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/gtramontina/stripe-angular",
   "description": "Angular directives to deal with Stripe.",
   "keywords": [
