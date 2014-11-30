@@ -1,16 +1,30 @@
 # Stripe Angular [![Bower version](https://badge.fury.io/bo/stripe-angular.svg)](http://badge.fury.io/bo/stripe-angular)
 Angular directives to deal with [Stripe](https://stripe.com/).
 
-## Install
+## Setup
+1) Install `stripe-angular` with bower
 ```
 bower install stripe-angular
+```
+
+2) Include `stripe.js` in the page
+```html
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+```
+
+3) Set your Stripe `publishable API key`
+```js
+angular.module('myApp', ['stripe'])
+.config(function() {
+  Stripe.setPublishableKey('your-publishable-key');
+})
 ```
 
 ## Directives
 List of available directives (only one at the moment :grin: ):
 
 ### `stripe:form`
-It abstracts what you would be doing manually as described in [https://stripe.com/docs/tutorials/forms](https://stripe.com/docs/tutorials/forms).
+It abstracts what you would be doing manually as described in [https://stripe.com/docs/tutorials/forms](https://stripe.com/docs/tutorials/forms) to create a `single-use token`.
 
 ```html
 <form stripe:form="saveCustomer">
@@ -23,14 +37,16 @@ It abstracts what you would be doing manually as described in [https://stripe.co
   <button type="submit">Save</button>
 </form>
 ```
-The `saveCustomer` function is what in the documents is called `stripeResponseHandler`. You can now do whatever you want with the response, like saving the new Stripe Customer ID to your user using a service, for example.
+
+The `saveCustomer` function or whatever function you set as a value for the `stripe:form` attribute is the form's response handler - the Stripe API docs refer to this as the `stripeResponseHandler`.
+
+You can now do whatever you want with the response, like sending the `single-use token` to your server to [complete a charge or save the payment details for later](https://stripe.com/docs/tutorials/charges).
 
 ```js
 angular.module('myApp', ['stripe'])
-.controller('IndexController', function($scope, $rootScope) {
+.controller('IndexController', function($scope, $http) {
   $scope.saveCustomer = function(status, response) {
-    $rootScope.user.stripeCustomerId = response.id;
-    $rootScope.user.save();
+    $http.post('/save_customer', { token: response.id });
   };
 });
 ```
