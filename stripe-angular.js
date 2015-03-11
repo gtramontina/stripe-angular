@@ -11,7 +11,7 @@ function($window) {
         button.prop('disabled', false);
         var args = arguments;
         scope.$apply(function() {
-          scope[attributes.stripeForm].apply(scope, args);
+          scope.$eval(attributes.stripeForm).apply(scope, args);
         });
       });
     });
