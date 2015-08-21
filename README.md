@@ -7,9 +7,11 @@ Angular directives to deal with [Stripe](https://stripe.com/).
 bower install stripe-angular
 ```
 
-2) Include `stripe.js` in the page
+2) Include `stripe.js` and this module in your page
 ```html
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript" src="lib/stripe-angular/stripe-angular.js"></script>
+<!-- the path above may vary depending on how you brought this module into your project -->
 ```
 
 3) Set your Stripe `publishable API key`
