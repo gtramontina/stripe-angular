@@ -1,9 +1,17 @@
 {
   "name": "stripe-angular",
-  "version": "1.0.0",
-  "description": "Forked from gtramontina/stripe-angular to support yarn",
   "main": "stripe-angular.js",
-  "repository": "git@github.com:alankyshum/stripe-angular.git",
-  "author": "Guilherme J. Tramontina <guilherme.tramontina@gmail.com>",
+  "version": "1.0.2",
+  "homepage": "https://github.com/gtramontina/stripe-angular",
+  "description": "Angular directives to deal with Stripe.",
+  "keywords": [
+    "angular",
+    "ng",
+    "stripe"
+  ],
+  "ignore": [ "README.md" ],
+  "authors": [
+    "Guilherme J. Tramontina <guilherme.tramontina@gmail.com>"
+  ],
   "license": "unlicense"
 }
