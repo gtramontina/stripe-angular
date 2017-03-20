@@ -1,0 +1,17 @@
+{
+  "name": "stripe-angular",
+  "main": "stripe-angular.js",
+  "version": "1.0.2",
+  "homepage": "https://github.com/gtramontina/stripe-angular",
+  "description": "Angular directives to deal with Stripe.",
+  "keywords": [
+    "angular",
+    "ng",
+    "stripe"
+  ],
+  "ignore": [ "README.md" ],
+  "authors": [
+    "Guilherme J. Tramontina <guilherme.tramontina@gmail.com>"
+  ],
+  "license": "unlicense"
+}
